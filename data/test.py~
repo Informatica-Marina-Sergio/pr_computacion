@@ -1,0 +1,11 @@
+# python script
+import requests
+from bs4 import BeautifulSoup
+
+URL = "https://www.lasexta.com/temas/delitos_de_odio-1"
+page = requests.get(URL)
+
+soup = BeautifulSoup(page.content, "html.parser")
+
+results = soup.findAll(class="link-noticia")
+print(results)
